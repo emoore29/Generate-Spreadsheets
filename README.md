@@ -4,6 +4,13 @@ This is a small program I wrote to automate a tedious work task of updating a we
 
 My program opens this template and updates the date in the "B4" cell (i.e. the Monday), which then autopopulates dates for the remaining days of the week. It prompts the user to decide on a "start date" for the spreadsheets being created, whether that be next Monday or a Monday in three weeks. Then it will autogenerate the number of spreadsheets requested, starting on the start date given, with each new spreadsheet starting on the following consecutive Monday.
 
-Currently it doesn't allow the user to change anything else in the spreadsheet, but in my case I'm not often updating the actual content, simply the date, so the program serves its purpose.
+Currently it doesn't allow the user to change anything else in the spreadsheet, but in my case I'm not often updating the actual content, simply the date, so the program serves its purpose. There may be issues when 
 
 I run it in Anaconda Prompt because I have installed Python via Anaconda. I'm still figuring out if that was a mistake or not.
+
+
+## Example:
+
+Today is 21/11/23. Next Monday is 27/11/23. If the user wants 4 spreadsheets generated starting on next Monday, the program will create 4 spreadsheets, with the B4 Monday cell of each spreadsheet being the following:
+
+27/11/23, 04/12/23, 11/12/23, and 18/12/23.
