@@ -1,9 +1,9 @@
 # Generate Spreadsheets
 
-This is a small program I wrote to automate a tedious work task of updating a weekly availability spreadsheet for sending my weekly availability to the company I work for.  
+This is a small program I wrote to automate a tedious work task of updating a weekly availability spreadsheet for sending my weekly availability to the company I work for. In the availability template, a user can set their availability for each day of the week, starting on a given date on a Monday.
 
-It updates the date in B4 of the availability template, which then autopopulates the other dates in the spreadsheet. It prompts the user to decide on a "start date", whether that be next Monday or another upcoming Monday. Then it will autogenerate the number of spreadsheets requested, each starting on the following consecutive Monday.
+My program opens this template and updates the date in the "B4" cell (i.e. the Monday), which then autopopulates dates for the remaining days of the week. It prompts the user to decide on a "start date" for the spreadsheets being created, whether that be next Monday or a Monday in three weeks. Then it will autogenerate the number of spreadsheets requested, starting on the start date given, with each new spreadsheet starting on the following consecutive Monday.
 
-I plan to set it up to automatically run every week, which is why there is a message printed when it opens to that effect.
+Currently it doesn't allow the user to change anything else in the spreadsheet, but in my case I'm not often updating the actual content, simply the date, so the program serves its purpose.
 
-I run it in Anaconda Prompt because I have Python installed with Anaconda. I'm still figuring out if that was a mistake or not.
+I run it in Anaconda Prompt because I have installed Python via Anaconda. I'm still figuring out if that was a mistake or not.
