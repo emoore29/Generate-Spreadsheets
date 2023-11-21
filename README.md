@@ -4,7 +4,7 @@ This is a small program I wrote to automate a tedious work task of updating a we
 
 My program opens this template and updates the date in the "B4" cell (i.e. the Monday), which then autopopulates dates for the remaining days of the week. It prompts the user to decide on a "start date" for the spreadsheets being created, whether that be next Monday or a Monday in three weeks. Then it will autogenerate the number of spreadsheets requested, starting on the start date given, with each new spreadsheet starting on the following consecutive Monday.
 
-Currently it doesn't allow the user to change anything else in the spreadsheet, but in my case I'm not often updating the actual content, simply the date, so the program serves its purpose. There may be issues when 
+Currently it doesn't allow the user to change anything else in the spreadsheet, but in my case I'm not often updating the actual content, simply the date, so the program serves its purpose.
 
 I run it in Anaconda Prompt because I have installed Python via Anaconda. I'm still figuring out if that was a mistake or not.
 
