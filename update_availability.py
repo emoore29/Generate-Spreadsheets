@@ -9,10 +9,17 @@ def update_availability_template(template_path, output_folder, new_date):
     # open the currently active sheet in the workbook
     ws = wb.active
       
-    # update cell B4 with new date
-    ws["B4"] = new_date
-    ws["C4"] = new_date
+    # Get the merged cell range
+    merged_cells = ws.merged_cells.ranges
+    merged_range = None
+    for merged_cell in merged_cells:
+        if ws['B4'] in merged_cell:
+            merged_range = merged_cell
+            break
 
+    # Update the values in the individual cells of the merged cell
+    for cell in merged_range:
+        cell.value = new_date
 
     # Save the updated template to a new Excel file
     new_file_name = f"Emmaline Moore - Availability Week Commencing {new_date.strftime('%d %B %Y')}.xlsx"
