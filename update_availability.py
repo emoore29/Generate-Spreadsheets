@@ -32,7 +32,7 @@ def generate_sheets(date, number_sheets):
 
 
 # Print welcome message
-print("Hello! Welcome to Auto Availability! Today is a Tuesday, and this is your friendly reminder to update your availability if you haven't already done so.")
+print("Hello! Welcome to Auto Availability!")
 
 # Get the current date
 current_date = datetime.now().date()
