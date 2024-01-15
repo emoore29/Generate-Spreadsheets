@@ -10,7 +10,9 @@ Currently it doesn't allow the user to change anything else in the spreadsheet, 
 
 In Anaconda Prompt:
 
-cd to location of py file, e.g.: C:\Users\[USERNAME]\OneDrive\Documents\GitHub\Generate-Spreadsheets
+cd to location of py file, e.g.: C:\Users\[USERNAME]\OneDrive\Documents\GitHub\Generate-Spreadsheets  
+
+Run the following:  
 python update_availability.py
 
 Then follow the prompts. 
