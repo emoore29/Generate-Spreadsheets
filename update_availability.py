@@ -197,11 +197,22 @@ class DateEncoder(json.JSONEncoder):
             return obj.isoformat()  # Serialize date objects as ISO formatted strings
         return super().default(obj)
 
+
 # Path to Quick Lists json location
-json_file_path = f"C:/Users/emoor/OneDrive/Documents/GitHub/Quick-Lists/json/weekly_availability_{next_monday}.json"
+quick_lists_repo_path = "C:/Users/emoor/OneDrive/Documents/GitHub/Quick-Lists/json"
+this_week_json_path = os.path.join(quick_lists_repo_path, "this_week.json")
+next_week_json_path = os.path.join(quick_lists_repo_path, "next_week.json")
+
+# Delete the this_week.json file if it exists
+if os.path.exists(this_week_json_path):
+    os.remove(this_week_json_path)
+    
+# Rename the next_week.json file as this_week.json if it exists
+if os.path.exists(next_week_json_path):
+    os.rename(next_week_json_path, this_week_json_path)
 
 # Save weekly_availability as a JSON file to Quick lists repo
-with open(json_file_path, 'w') as json_file: # Opens weekly_availability.json in write mode. Creates if it doesn't exist. 'with' will close file after json.dump is executed.
+with open(next_week_json_path, 'w') as json_file: # Opens weekly_availability.json in write mode. Creates if it doesn't exist. 'with' will close file after json.dump is executed.
     json.dump(weekly_availability, json_file, cls=DateEncoder) # Turns weekly_availability into json format. Writes to json_file.
 
 print("Saved as JSON file to Quick Lists. You will need to push this change to GitHub if you want Quick Lists to update. If it doesn't work, please check that you haven't changed the Quick Lists repo path name.")
