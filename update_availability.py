@@ -198,10 +198,10 @@ class DateEncoder(json.JSONEncoder):
         return super().default(obj)
 
 # Path to Quick Lists json location
-json_file_path = "C:/Users/emoor/OneDrive/Documents/GitHub/Quick-Lists/json/weekly_availability.json"
+json_file_path = f"C:/Users/emoor/OneDrive/Documents/GitHub/Quick-Lists/json/weekly_availability_{next_monday}.json"
 
-# Save weekly_availability as a JSON file
+# Save weekly_availability as a JSON file to Quick lists repo
 with open(json_file_path, 'w') as json_file: # Opens weekly_availability.json in write mode. Creates if it doesn't exist. 'with' will close file after json.dump is executed.
     json.dump(weekly_availability, json_file, cls=DateEncoder) # Turns weekly_availability into json format. Writes to json_file.
 
-print("Saved as JSON file to Quick Lists. You will need to push this change to GitHub if you want Quick Lists to update.")
+print("Saved as JSON file to Quick Lists. You will need to push this change to GitHub if you want Quick Lists to update. If it doesn't work, please check that you haven't changed the Quick Lists repo path name.")
