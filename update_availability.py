@@ -12,7 +12,13 @@ viq_file_path = None
 current_date = datetime.now().date()
 # find the date of next Monday
 days_until_monday = (7 - current_date.weekday()) % 7
-next_monday = current_date + timedelta(days=days_until_monday)
+
+if days_until_monday == 0:
+    next_monday = current_date + timedelta(days=7)
+else:
+    next_monday = current_date + timedelta(days=days_until_monday)
+
+
 
 weekly_availability = {
     'Monday': {'date': next_monday, 'viq': {
@@ -150,7 +156,7 @@ def create_new_spreadsheet():
 
 create_new_spreadsheet()
 # Print welcome message
-print(f"Hello! Welcome to Auto Availability! It's currently {current_date}. Next Monday is {next_monday}. A spreadsheet for your VIQ availability next week has been created at {viq_file_path}. Here is your default schedule: ")
+print(f"Hello! Welcome to Auto Availability! It's currently {current_date}. Days until monday: {days_until_monday}. Next Monday is {next_monday}. A spreadsheet for your VIQ availability next week has been created at {viq_file_path}. Here is your default schedule: ")
 print(tabulate(convert_to_table(), headers=["Day", "Date", "VIQ", "MDPI"], tablefmt="grid"))
 
 update_viq_input = input("Do you want to update your VIQ availability? y/n: ")
